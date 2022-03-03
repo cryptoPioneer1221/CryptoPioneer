@@ -1,0 +1,29 @@
+<div class="menu">
+    <nav id="navigation" class="navbar navbar-expand-lg">
+        <a href="#" class="navbar-brand">CaSuperNova</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+                <li class="nav-item active" *ngFor="let menu of menuItems">
+                    <div class="dropdown">
+                        <a href="#" class="nav-link">{{menu.menuItem}}&nbsp;&nbsp;<i *ngIf="menu.category.length!=0"
+                                id="downarr" class="arrow down mb-1"></i></a>
+                        <div *ngIf="menu.category.length!=0" class="dropdown-content">
+                            <div *ngFor="let menuCat of menu.category" (mouseover)="over()" (mouseout)="out()">
+                                <a href="#">{{menuCat.catName}}</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="signinl">
+            <a href="" class="signin">Sign In</a>
+        </div>
+    </nav>
+</div>
+
+
